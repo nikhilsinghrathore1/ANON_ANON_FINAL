@@ -113,18 +113,11 @@ const onGenerate = () => {
         <div className='flex flex-col gap-3 h-full overflow-y-scroll removesc'>
           {message?.length > 0 ? (
             message.map((msg, index) => (
-<<<<<<< HEAD
               <div className='min-w-[60%] flex items-start gap-3 max-w-[90%] p-3 flex-wrap rounded-xl bg-[#222222]' key={index}>
                 {msg.role === "user" &&
                 <div className='w-10 h-10 rounded-full items-center  justify-center bg-green-700 flex text-lg uppercase font-bold'>U</div>
                   }
                 <Markdown className='leading-7  '>{msg.content}</Markdown>
-=======
-              <div className='flex items-start gap-3 bg-[#222222] p-3 rounded-xl min-w-[60%] max-w-[90%]' key={index}>
-                {msg.role === "user" &&
-                  <Image className='rounded-full' src={userDets.picture} width={35} height={35} alt="not showing" />}
-                <Markdown className='leading-7'>{msg.content}</Markdown>
->>>>>>> d9ec263bca70c0210d38115519499869fc19e50e
               </div>
             ))
           ) : (
@@ -160,11 +153,7 @@ const onGenerate = () => {
   )
 }
 
-<<<<<<< HEAD
 } 
 
 
 export default Chatview
-=======
-export default Chatview
->>>>>>> d9ec263bca70c0210d38115519499869fc19e50e

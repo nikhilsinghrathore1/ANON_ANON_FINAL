@@ -4,13 +4,9 @@ import { useContext, useState } from 'react';
 import { ArrowRight, Link, Loader2Icon } from 'lucide-react';
 import { MessageContext } from '@/context/MessagesContext';
 import { UserDetailsContext } from '@/context/UserDetailsContext';
-import Login from './Login';
-import axios from 'axios';
 import { redirect } from 'next/navigation';
-import { AuthContext } from '@/context/AuthContext';
 
 const Hero = () => {
-<<<<<<< HEAD
   const [userInput, setuserInput] = useState(null)
   const [openSignupDialog, setopenSignupDialog] = useState(false)
   const Msgcontext = useContext(MessageContext)
@@ -40,54 +36,9 @@ const Hero = () => {
 };
 
 
-=======
-  const [userInput, setuserInput] = useState(null);
-  const Msgcontext = useContext(MessageContext);
-  const [loading, setloading] = useState(false);
-  const { setopenSignupDialog, openSignupDialog } = useContext(AuthContext);
-
-  const userContext = useContext(UserDetailsContext);
-  const { setmessage } = Msgcontext;
-  const { userDets } = userContext;
-
-  const OnGenerate = async (input) => {
-    setloading(true);
-    if (!userDets?.name) {
-      setopenSignupDialog(true);
-      return;
-    }
-    if (userDets.id) {
-      console.log('storing the data in setMeesage');
-      setmessage({
-        role: 'user',
-        content: input,
-      });
-
-      const response = await axios.post('/api/messages', {
-        id: userDets.id,
-        input: input,
-      });
-      console.log(response.data.msg.message);
-
-      setmessage(response.data.msg.message);
-
-      localStorage.setItem('chatId', response.data.msg.id);
-      localStorage.setItem(
-        'messageArray',
-        JSON.stringify(response.data.msg.message)
-      );
-
-      if (response.data) {
-        setloading(false);
-        redirect('/workspace');
-      }
-    }
-  };
->>>>>>> d9ec263bca70c0210d38115519499869fc19e50e
 
   return (
     <div className="flex flex-col items-center mt-28 w-full h-full">
-      <Login open={openSignupDialog} setOpenChange={setopenSignupDialog} />
       <h1 className="font-bold text-4xl">What do you want to build?</h1>
 
       <p className="mt-1 text-gray-500">

@@ -8,7 +8,6 @@ import { MessageContext } from '@/context/MessagesContext';
 import { Menu } from 'lucide-react';
 import { useSidebar } from '../ui/sidebar';
 import { ActionContext } from '@/context/ActionContext';
-import Login from './Login';
 import { googleLogout } from '@react-oauth/google';
 
 const Navbar = () => {
@@ -61,7 +60,7 @@ const Navbar = () => {
               Logout
             </Button>
           ) : (
-            <Login />
+            <></>
           )}
         </div>
       )}
